@@ -21,15 +21,15 @@ void exception_with_error_message()
 
 void catch_all()
 {
-try {
-    throw std::runtime_error{"catch all"};
-} catch (std::overflow_error& e) {
-    std::cout << "exception: " << e.what() << std::endl;
-} catch (std::range_error& e) {
-    std::cout << "exception: " << e.what() << std::endl;
-} catch (...) {
-    std::cout << "catch all" << std::endl;
-}
+    try {
+        throw std::runtime_error{"catch all"};
+    } catch (std::overflow_error& e) {
+        std::cout << "exception: " << e.what() << std::endl;
+    } catch (std::range_error& e) {
+        std::cout << "exception: " << e.what() << std::endl;
+    } catch (...) {
+        std::cout << "catch all" << std::endl;
+    }
 }
 
 void rethrow()

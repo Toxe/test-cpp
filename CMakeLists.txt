@@ -3,90 +3,40 @@ project("C++ Console Test Apps" LANGUAGES CXX)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_executable(allocator allocator.cpp)
-add_executable(bind bind.cpp)
-add_executable(cast cast.cpp)
-add_executable(const const.cpp)
-add_executable(constexpr constexpr.cpp)
-add_executable(constructors constructors.cpp)
-add_executable(decltype decltype.cpp)
-add_executable(exceptions exceptions.cpp)
-add_executable(explicit explicit.cpp)
-add_executable(fstream fstream.cpp)
-add_executable(function_pointers function_pointers.cpp)
-add_executable(initialization initialization.cpp)
-add_executable(iterator iterator.cpp)
-add_executable(lambda lambda.cpp)
-add_executable(optional optional.cpp)
-add_executable(shared_ptr shared_ptr.cpp)
-add_executable(string string.cpp)
-add_executable(structured_binding structured_binding.cpp)
-add_executable(typedef typedef.cpp)
-add_executable(unique_ptr unique_ptr.cpp)
-add_executable(vector vector.cpp)
+set(ALL_TARGETS
+    allocator
+    bind
+    cast
+    const
+    constexpr
+    constructors
+    decltype
+    exceptions
+    explicit
+    fstream
+    function_pointers
+    initialization
+    iterator
+    lambda
+    optional
+    shared_ptr
+    string
+    structured_binding
+    typedef
+    unique_ptr
+    vector
+)
 
-target_compile_features(allocator PUBLIC cxx_std_17)
-target_compile_features(bind PUBLIC cxx_std_17)
-target_compile_features(cast PUBLIC cxx_std_17)
-target_compile_features(const PUBLIC cxx_std_17)
-target_compile_features(constexpr PUBLIC cxx_std_17)
-target_compile_features(constructors PUBLIC cxx_std_17)
-target_compile_features(decltype PUBLIC cxx_std_17)
-target_compile_features(exceptions PUBLIC cxx_std_17)
-target_compile_features(explicit PUBLIC cxx_std_17)
-target_compile_features(fstream PUBLIC cxx_std_17)
-target_compile_features(function_pointers PUBLIC cxx_std_17)
-target_compile_features(initialization PUBLIC cxx_std_17)
-target_compile_features(iterator PUBLIC cxx_std_17)
-target_compile_features(lambda PUBLIC cxx_std_17)
-target_compile_features(shared_ptr PUBLIC cxx_std_17)
-target_compile_features(optional PUBLIC cxx_std_17)
-target_compile_features(string PUBLIC cxx_std_17)
-target_compile_features(structured_binding PUBLIC cxx_std_17)
-target_compile_features(typedef PUBLIC cxx_std_17)
-target_compile_features(unique_ptr PUBLIC cxx_std_17)
-target_compile_features(vector PUBLIC cxx_std_17)
+foreach(target ${ALL_TARGETS})
+    add_executable(${target} ${target}.cpp)
+    target_compile_features(${target} PUBLIC cxx_std_17)
+    target_compile_options(${target} PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
+    set_target_properties(${target} PROPERTIES CXX_EXTENSIONS OFF)
+endforeach()
 
-target_compile_options(allocator PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(bind PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(cast PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(const PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(constexpr PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast -Wno-unused-variable)
-target_compile_options(constructors PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(decltype PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast -Wno-unused-variable)
-target_compile_options(exceptions PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(explicit PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast -Wno-unused-private-field -Wno-unused-variable)
-target_compile_options(fstream PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(function_pointers PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(initialization PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast -Wno-unused-variable)
-target_compile_options(iterator PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast -Wno-unused-variable)
-target_compile_options(lambda PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(optional PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(shared_ptr PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(string PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(structured_binding PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(typedef PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast -Wno-unused-variable)
-target_compile_options(unique_ptr PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-target_compile_options(vector PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
-
-set_target_properties(allocator PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(bind PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(cast PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(const PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(constexpr PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(constructors PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(decltype PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(exceptions PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(explicit PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(fstream PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(function_pointers PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(initialization PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(iterator PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(lambda PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(optional PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(shared_ptr PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(string PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(structured_binding PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(typedef PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(unique_ptr PROPERTIES CXX_EXTENSIONS OFF)
-set_target_properties(vector PROPERTIES CXX_EXTENSIONS OFF)
+target_compile_options(constexpr PRIVATE -Wno-unused-variable)
+target_compile_options(decltype PRIVATE -Wno-unused-variable)
+target_compile_options(explicit PRIVATE -Wno-unused-private-field -Wno-unused-variable)
+target_compile_options(initialization PRIVATE -Wno-unused-variable)
+target_compile_options(iterator PRIVATE -Wno-unused-variable)
+target_compile_options(typedef PRIVATE -Wno-unused-variable)

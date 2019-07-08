@@ -47,6 +47,7 @@ target_compile_features(typedef PUBLIC cxx_std_17)
 target_compile_features(unique_ptr PUBLIC cxx_std_17)
 target_compile_features(vector PUBLIC cxx_std_17)
 
+target_compile_options(constructors PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
 target_compile_options(explicit PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast -Wno-unused-private-field -Wno-unused-variable)
 target_compile_options(optional PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
 

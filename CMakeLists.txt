@@ -11,6 +11,7 @@ set(ALL_TARGETS
     constexpr
     constructors
     decltype
+    enum
     exceptions
     explicit
     fstream

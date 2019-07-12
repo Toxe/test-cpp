@@ -25,6 +25,7 @@ set(ALL_TARGETS
     structured_binding
     typedef
     unique_ptr
+    value_range_observer
     vector
 )
 

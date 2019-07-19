@@ -32,7 +32,7 @@ set(ALL_TARGETS
 foreach(target ${ALL_TARGETS})
     add_executable(${target} ${target}.cpp)
     target_compile_features(${target} PUBLIC cxx_std_17)
-    target_compile_options(${target} PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
+    target_compile_options(${target} PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast -fcolor-diagnostics)
     set_target_properties(${target} PROPERTIES CXX_EXTENSIONS OFF)
 endforeach()
 

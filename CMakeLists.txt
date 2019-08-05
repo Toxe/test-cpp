@@ -61,5 +61,3 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     target_compile_options(initialization PRIVATE /wd4189)
     target_compile_options(typedef PRIVATE /wd4189)
 endif()
-
-message(${CMAKE_CXX_FLAGS})

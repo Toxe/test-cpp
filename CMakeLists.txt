@@ -20,6 +20,7 @@ set(ALL_TARGETS
     iterator
     lambda
     optional
+    random
     shared_ptr
     string
     structured_binding

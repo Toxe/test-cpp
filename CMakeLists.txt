@@ -62,6 +62,8 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
     target_compile_options(decltype PRIVATE -Wno-unused-variable)
     target_compile_options(explicit PRIVATE -Wno-unused-but-set-variable)
     target_compile_options(initialization PRIVATE -Wno-unused-variable)
+    target_compile_options(iterator PRIVATE -Wno-unused-but-set-variable)
+    target_compile_options(typedef PRIVATE -Wno-unused-variable)
 endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")

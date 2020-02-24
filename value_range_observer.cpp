@@ -22,10 +22,8 @@ int main()
 {
     ValueRangeObserver<float> ob_foo{"foo"};
 
-    float foo;
-
     for (int i = 1; i <= 10; ++i) {
-        foo = (100.0f * i) / 3.0f;
+        float foo = (100.0f * i) / 3.0f;
         ob_foo.update(foo);
     }
 }

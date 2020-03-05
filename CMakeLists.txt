@@ -10,6 +10,7 @@ set(ALL_TARGETS
     const
     constexpr
     constructors
+    copy_assignment_operator
     copy_constructor
     decltype
     enum

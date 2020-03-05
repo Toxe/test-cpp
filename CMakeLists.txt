@@ -10,6 +10,7 @@ set(ALL_TARGETS
     const
     constexpr
     constructors
+    copy_constructor
     decltype
     enum
     exceptions
@@ -50,6 +51,7 @@ endforeach()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     target_compile_options(constexpr PRIVATE -Wno-unused-variable)
+    target_compile_options(copy_constructor PRIVATE -Wno-vexing-parse)
     target_compile_options(decltype PRIVATE -Wno-unused-variable)
     target_compile_options(explicit PRIVATE -Wno-unused-private-field -Wno-unused-variable)
     target_compile_options(initialization PRIVATE -Wno-unused-variable)

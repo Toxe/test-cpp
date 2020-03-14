@@ -23,6 +23,7 @@ set(ALL_TARGETS
     lambda
     optional
     random
+    random_discrete_distribution
     shared_ptr
     string
     structured_binding

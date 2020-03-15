@@ -7,6 +7,7 @@ set(ALL_TARGETS
     allocator
     bind
     cast
+    chrono
     const
     constexpr
     constructors

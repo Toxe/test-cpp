@@ -25,6 +25,7 @@ set(ALL_TARGETS
     optional
     random
     random_discrete_distribution
+    random_piecewise_linear_distribution
     shared_ptr
     string
     structured_binding

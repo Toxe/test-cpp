@@ -29,6 +29,16 @@ void simple2()
     do_something(foo);
 }
 
+void reset()
+{
+    auto foo = std::make_unique<Foo>("Reset 1");
+    do_something(foo);
+    foo.reset(new Foo("Reset 2"));
+    do_something(foo);
+    foo.reset(new Foo("Reset 3"));
+    do_something(foo);
+}
+
 std::unique_ptr<Foo> factory1()
 {
     std::unique_ptr<Foo> foo(new Foo("Factory Test 1"));
@@ -44,7 +54,13 @@ std::unique_ptr<Foo> factory2()
 int main()
 {
     simple1();
+    std::cout << "--------------------------\n";
+
     simple2();
+    std::cout << "--------------------------\n";
+
+    reset();
+    std::cout << "--------------------------\n";
 
     auto foo1 = factory1();
     auto foo2 = factory2();

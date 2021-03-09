@@ -59,15 +59,15 @@ int main()
     std::allocator<Foo> a;
     auto foos = a.allocate(3);
 
-    a.construct(foos,     "Test 1");
-    a.construct(foos + 1, "Test 2");
-    a.construct(foos + 2, "Test 3");
+    std::construct_at(foos,     "Test 1");
+    std::construct_at(foos + 1, "Test 2");
+    std::construct_at(foos + 2, "Test 3");
 
     for (int i = 0; i < 3; i++)
         do_something(foos[i]);
 
     for (int i = 0; i < 3; i++)
-        a.destroy(&foos[i]);
+        std::destroy_at(&foos[i]);
 
     a.deallocate(foos, 3);
 

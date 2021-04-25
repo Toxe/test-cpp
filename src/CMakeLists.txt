@@ -1,5 +1,5 @@
 set(ALL_TARGETS
-    allocator
+    # allocator
     bind
     cast
     chrono

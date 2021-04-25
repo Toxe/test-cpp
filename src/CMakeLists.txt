@@ -27,6 +27,7 @@ set(ALL_TARGETS
     typedef
     unique_ptr
     value_range_observer
+    variant
     vector
 )
 

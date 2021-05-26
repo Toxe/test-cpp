@@ -22,6 +22,7 @@ set(ALL_TARGETS
     random_discrete_distribution
     random_piecewise_linear_distribution
     shared_ptr
+    source_location_function_name
     string
     structured_binding
     typedef

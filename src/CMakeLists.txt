@@ -59,7 +59,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
-    target_compile_options(allocator PRIVATE /D_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING)
+    # target_compile_options(allocator PRIVATE /D_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING)
     target_compile_options(constexpr PRIVATE /wd4189)
     target_compile_options(decltype PRIVATE /wd4189)
     target_compile_options(initialization PRIVATE /wd4189)

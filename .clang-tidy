@@ -1,7 +1,8 @@
 ---
 Checks: 'bugprone-*,
+         cert-*,
          clang-analyzer-*,
-         clang-diagnostic-*,
+         concurrency-*,
          cppcoreguidelines-*,
          misc-*,
          modernize-*,
@@ -10,8 +11,9 @@ Checks: 'bugprone-*,
          readability-*,
 
          -modernize-use-trailing-return-type,
-         -readability-braces-around-statements,
+         -readability-braces-around-statements'
 
-         -cppcoreguidelines-avoid-magic-numbers,
-         -readability-magic-numbers'
+CheckOptions:
+  - key: readability-implicit-bool-conversion.AllowPointerConditions
+    value: true
 ...

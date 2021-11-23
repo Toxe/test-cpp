@@ -1,4 +1,19 @@
-/build*
-/cmake-build*
-/.vscode
+# CLion
 /.idea
+/cmake-build*
+
+# Visual Studio
+/.vs
+/out
+/CMakeSettings.json
+
+# Visual Studio Code
+/.vscode
+
+# CMake
+/build*
+
+/*.raw
+/*.png
+/*.mp4
+imgui.ini

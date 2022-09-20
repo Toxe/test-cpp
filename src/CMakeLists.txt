@@ -3,7 +3,7 @@ set(ALL_TARGETS
     auto_delete_resource
     bind
     cast
-    chrono
+    chrono_duration
     const
     constexpr
     constructors

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <thread>
 
-using namespace std::chrono_literals;
+using namespace std::literals::chrono_literals;
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
     std::cout << minutes.count() << "m + " << seconds.count() << "s = " << sum.count() << "s\n";
 
     seconds = 5min;  // automatic cast of minutes --> seconds
- // minutes = 300s;  // error, needs explicit duration_cast<>
+    // minutes = 300s;  // error, needs explicit duration_cast<>
     minutes = std::chrono::duration_cast<std::chrono::minutes>(301s);
     std::cout << minutes.count() << "m, " << seconds.count() << "s\n";
 

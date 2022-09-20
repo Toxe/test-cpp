@@ -24,6 +24,7 @@ set(ALL_TARGETS
     random_piecewise_linear_distribution
     shared_ptr
     source_location_function_name
+    stream_redirect
     string
     structured_binding
     typedef

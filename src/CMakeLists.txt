@@ -18,6 +18,7 @@ set(ALL_TARGETS
     initialization
     iterator
     lambda
+    null_stream_buffer
     optional
     random
     random_discrete_distribution

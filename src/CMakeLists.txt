@@ -1,5 +1,6 @@
 set(ALL_TARGETS
     # allocator
+    array
     auto_delete_resource
     bind
     cast

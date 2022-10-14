@@ -6,6 +6,7 @@ set(ALL_TARGETS
     cast
     chrono_duration
     chrono_duration_cast
+    chrono_duration_implicit_floating_point_conversions
     const
     constexpr
     constructors

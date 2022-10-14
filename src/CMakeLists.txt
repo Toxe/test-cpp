@@ -5,6 +5,7 @@ set(ALL_TARGETS
     bind
     cast
     chrono_duration
+    chrono_duration_cast
     const
     constexpr
     constructors

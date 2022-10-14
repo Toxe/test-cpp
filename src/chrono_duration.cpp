@@ -15,13 +15,13 @@ void output_milliseconds(const std::chrono::milliseconds ms)
 
 void initialization()
 {
-    int ten = 10;
+    const int ten = 10;
 
     // std::chrono::seconds s1 = 10;  // error: not implicitly constructible from int
-    std::chrono::seconds s2{ten};
-    std::chrono::seconds s3{10};
-    std::chrono::seconds s4 = 10s;
-    std::chrono::seconds s5 = s2 + s3 + s4;
+    const std::chrono::seconds s2{ten};
+    const std::chrono::seconds s3{10};
+    const std::chrono::seconds s4 = 10s;
+    const std::chrono::seconds s5 = s2 + s3 + s4;
 
     output_seconds(s5);
 }
@@ -38,10 +38,10 @@ void conversion()
 
 void mixed_mode()
 {
-    std::chrono::seconds s{3};
-    std::chrono::milliseconds ms{50};
+    const std::chrono::seconds s{3};
+    const std::chrono::milliseconds ms{50};
 
-    auto sum = s + ms;
+    const auto sum = s + ms;
 
     output_milliseconds(sum);
 }
@@ -51,4 +51,14 @@ int main()
     initialization();
     conversion();
     mixed_mode();
+
+    // auto t0 = std::chrono::high_resolution_clock::now();  // returns most likely nanoseconds
+    // std::this_thread::sleep_for(5ms);
+    // auto t1 = std::chrono::high_resolution_clock::now();
+    // auto us = std::chrono::duration_cast<std::chrono::microseconds>(t1 - t0);
+    //
+    // std::cout << "slept for " << us.count() << "μs or " << (t1 - t0).count() << " (probably) ns\n";
+    // std::cout << "std::chrono::high_resolution_clock period = "
+    //           << std::chrono::high_resolution_clock::period::num << ":"
+    //           << std::chrono::high_resolution_clock::period::den << '\n';
 }

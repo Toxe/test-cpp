@@ -20,8 +20,8 @@ void output_float_milliseconds(const float_millisecond ms)
 // implicit conversions FROM any precision TO floating-point representations (without using duration_cast)
 void implicit_floating_point_conversions()
 {
-    float_millisecond ms{2500};
-    float_second s{5};
+    const float_millisecond ms{2500};
+    const float_second s{5};
 
     output_float_milliseconds(ms);  // 2500ms
     output_float_seconds(ms);  // 2.5s

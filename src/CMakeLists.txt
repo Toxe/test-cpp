@@ -4,6 +4,7 @@ set(ALL_TARGETS
     auto_delete_resource
     bind
     cast
+    chrono_clock
     chrono_duration
     chrono_duration_cast
     chrono_duration_implicit_floating_point_conversions
